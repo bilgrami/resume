@@ -7,7 +7,7 @@ def Fn_recursion(n):
         return Fn_recursion(n-1) + Fn_recursion(n-2)
 
 def Fn_dynamic(n):
-    memo = [0 for x in range(n+1)];
+    memo = [0 for _ in range(n+1)];
     memo[0], memo[1] = 0, 1
     for i in range(2, n+1):
         memo[i] = memo[i-1] + memo[i-2]
@@ -31,7 +31,7 @@ def run_Fn_algorithm(algorithm, n, print_val = False):
 
 if __name__ == "__main__":
     algorithms = ['Fn_dynamic', 'Fn_recursion']
-    n = 40
+    n = 20
     print (f'n = {n}')
     for algorithm in algorithms:
-        run_Fn_algorithm(algorithm, n)
+        run_Fn_algorithm(algorithm, n, True)

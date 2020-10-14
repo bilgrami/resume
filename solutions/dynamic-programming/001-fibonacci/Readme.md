@@ -11,7 +11,7 @@ def Fn_recursion(n):
         return Fn_recursion(n-1) + Fn_recursion(n-2)
 
 def Fn_dynamic(n):
-    memo = [0 for x in range(n+1)];
+    memo = [0 for _ in range(n+1)];
     memo[0], memo[1] = 0, 1
     for i in range(2, n+1):
         memo[i] = memo[i-1] + memo[i-2]
@@ -28,7 +28,18 @@ python3 fibonacci.py
 Result 
 
 ```
-n = 40
-Algorithm: fibonacci_dynamic. Minimum execution time: 3.559899050742388e-05
-Algorithm: fibonacci_recursion. Minimum execution time: 162.82811394199962
+n = 20
+Fn_dynamic: 20 ->  6765
+Fn_dynamic: 20 ->  6765
+Fn_dynamic: 20 ->  6765
+Fn_dynamic: 20 ->  6765
+Fn_dynamic: 20 ->  6765
+Algorithm: Fn_dynamic. Minimum execution time: 0.00012869801139459014
+Fn_recursion: 20 ->  6765
+Fn_recursion: 20 ->  6765
+Fn_recursion: 20 ->  6765
+Fn_recursion: 20 ->  6765
+Fn_recursion: 20 ->  6765
+Algorithm: Fn_recursion. Minimum execution time: 0.011802783992607147
+
 ```
